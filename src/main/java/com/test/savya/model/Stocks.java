@@ -19,6 +19,9 @@ public class Stocks implements Serializable {
     @Column(name = "stockName", unique = true, nullable = false)
     private String stockName;
 
+    @Column(name = "CurrentPrice")
+    private Double currentPrice;
+
     /*@OneToMany(fetch = FetchType.EAGER, mappedBy = "stocks", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Trades> trades;*/
 }
