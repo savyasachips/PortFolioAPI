@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/portfolio")
 public class PFController {
 
     @Autowired
@@ -54,6 +54,25 @@ public class PFController {
         map.put("success", pFService.deleteTrades(trades));
         map.put("data",trades);
         return map;
+    }
+
+    @GetMapping("/")
+    public Map<String,Object> getPortFolio(){
+        Map<String,Object> map = new HashMap<>();
+        return pFService.getPortFolio(map);
+    }
+
+    @GetMapping("/holdings")
+    public Map<String,Object> averageBuyingPrice(){
+        Map<String,Object> map = new HashMap<>();
+        return pFService.getHoldings(map);
+    }
+
+
+    @GetMapping("/returns")
+    public Map<String,Object> getCumulativeReturns(){
+        Map<String,Object> map = new HashMap<>();
+        return pFService.getCumulativeReturns(map);
     }
 
     @GetMapping("/fetch")

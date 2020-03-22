@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public interface PFService {
@@ -14,4 +15,7 @@ public interface PFService {
     Trades addStocks(Trades trades);
     boolean updateTrades(Trades trades);
     boolean deleteTrades(Trades trades);
+    Map<String, Object> getHoldings(Map<String, Object> map);
+    Map<String, Object> getPortFolio(Map<String, Object> map);
+    Map<String, Object> getCumulativeReturns(Map<String, Object> map);
 }

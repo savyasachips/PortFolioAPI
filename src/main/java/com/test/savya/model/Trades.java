@@ -16,7 +16,7 @@ public class Trades implements Serializable {
     private static final long serialVersionUID = 4L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name="Type")
@@ -24,6 +24,9 @@ public class Trades implements Serializable {
 
     @Column(name="StockPrice")
     private int stockPrice;
+
+    @Column(name="StockCount")
+    private int stockCount;
 
     @Column(name = "TransactionDate")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss:SSS", iso = DateTimeFormat.ISO.DATE_TIME)
